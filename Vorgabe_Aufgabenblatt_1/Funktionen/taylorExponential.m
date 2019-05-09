@@ -27,5 +27,10 @@ for i=0:N
     % plot allllll the values
     plot(x_space, y_space, "Color", color(i + 1,:));
 end
+xl = xlim;
+yl = ylim;
+
+plot ([xl(1), xl(2)], [0, 0], 'k') % x Achse
+plot ([0, 0], [yl(1), yl(2)], 'k') % y Achse
 hold off;
 end

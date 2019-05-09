@@ -20,8 +20,8 @@ hold all
 % TODO: Funktion aufrufen
 taylorExponential(n,a);
 %% Taylorreihe Sinus
-n = 10;
-a = 0;
+n = 4;
+a = pi/4;
 subplot(2,2,2)
 title('Taylorreihe Sinus')
 hold all
