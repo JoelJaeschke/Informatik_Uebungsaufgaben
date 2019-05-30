@@ -55,14 +55,6 @@ while true
     elseif option == 'q' % Programm beenden
         break;
         
-    elseif option == "r"
-        whomCanIReach(adjacencyMatrix, vertexPositions);
-        pause();
-        
-    elseif option == "p"
-        determinePropagationInGraph(adjacencyMatrix, vertexPositions);
-        pause();
-        
     else
         warning('Ungueltige Option!')
     end
