@@ -9,7 +9,7 @@ w = [
     1,5,inf,4,5,inf
     ];
 
-[shortestPathLength, shortestPath] = dijkstra(w1, 2, 5);
+[shortestPathLength, shortestPath] = dijkstra(w, 2, 5);
 
 assert(shortestPathLength == 7, "Path length is wrong");
 assert(isequal(shortestPath, [2,3,4,5]), "Shortest path is wrong");
