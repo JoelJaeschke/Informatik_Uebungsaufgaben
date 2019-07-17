@@ -1,34 +1,32 @@
-addpath("../Library");
+close all;
 clear;
 clc;
+addpath('../Library');
 
-% Test matrix
-v = [1,1;
-    1,2;
-    2,1;
-    1,1];
-
-rotationTarget = [
-    1.2929 1.7071;
-    2.0000 2.4142;
-    2.0000 1.0000; 
-    1.2929 1.7071];
-
-mirrorTarget = [
-    3 3;
-    2 3;
-    3 2;
-    3 3];
-
-rotate45DegreesNegative = transformPoints(v,rotate(-45,[2 1]));
-mirrorAtAxis = transformPoints(v ,mirrorAtAxis([1,3;3,1]));
-
+v = [1 1;
+     1 2
+     2 1
+     1 1];
+ 
+  
+figure;
+subplot(1,2,1) 
+plot( v(:,1), v(:,2), '-ro' );
 hold on;
-plot(v);
-plot(rotate45DegreesNegative);
-hold off;
+axis equal;
+axis([0 4 0 4]);
+ 
 
+centerOfRotation = [2,1];
+q = transformPoints( v, rotate(45 , centerOfRotation ) );
+plot( q(:,1), q(:,2), '-bo' );
+subplot(1,2,2)
+plot( v(:,1), v(:,2), '-ro' );
 hold on;
-plot(v);
-plot(mirrorAtAxis);
-hold off;
+axis equal;
+axis([0 4 0 4]);
+pointsOfMirrorAxis = [ 1,3; 3,1];
+plot( pointsOfMirrorAxis(:,1), pointsOfMirrorAxis(:,2), '-ko' );
+ 
+q = transformPoints(v, mirrorAtAxis(pointsOfMirrorAxis) );
+plot( q(:,1), q(:,2), '-bo' );
